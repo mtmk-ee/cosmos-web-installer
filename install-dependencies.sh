@@ -6,7 +6,10 @@ echo "====================================================="
 echo "Installing dependencies"
 
 sudo apt-get update
-sudo apt-get install nodejs npm
+sudo apt install npm
+sudo npm install -g npm@latest
+
+sudo apt-get install nodejs
 sudo apt-get install -y build-essential wget libz-dev gcc-7 g++-7 cmake git openssl libssl-dev libsasl2-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev
 
 
@@ -39,18 +42,25 @@ make
 echo "Installing..."
 sudo make install
 
-echo "Cleaning up..."
-rm mongo-c-driver-1.17.0.tar.gz
-rm -rf mongo-c-driver-1.17.0
+#echo "Cleaning up..."
+#rm mongo-c-driver-1.17.0.tar.gz
+#rm -rf mongo-c-driver-1.17.0
 
+cd ../..
 
 # Install MongoDB C++ Driver
 echo "Installing MongoDB C++ Driver..."
 echo "Downloading..."
-wget https://github.com/mongodb/mongo-cxx-driver/releases/download/r3.6.0/mongo-cxx-driver-r3.6.0.tar.gz
 
-tar xzf mongo-cxx-driver-r3.6.0.tar.gz
-cd mongo-cxx-driver-r3.6.0
+#wget https://github.com/mongodb/mongo-cxx-driver/releases/download/r3.6.0/mongo-cxx-driver-r3.6.0.tar.gz
+
+#tar xzf mongo-cxx-driver-r3.6.0.tar.gz
+#cd mongo-cxx-driver-r3.6.0
+
+git clone -b releases/stable https://github.com/mongodb/mongo-cxx-driver.git
+cd mongo-cxx-driver
+
+
 mkdir build
 cd build
 
@@ -62,8 +72,7 @@ echo "Installing..."
 sudo make install
 
 echo "Cleaning up..."
-rm mongo-cxx-driver-r3.6.0.tar.gz
-rm -rf mongo-cxx-driver-r3.6.0
+#rm -rf mongo-cxx-driver-r3.6.0
 
 
 
