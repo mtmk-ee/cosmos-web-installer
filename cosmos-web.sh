@@ -1,5 +1,14 @@
 #!/bin/bash
 
+
+# Directory containing agent_mongo
+AGENT_MONGO_FOLDER=~/cosmos/source/tools/cosmos-mongodb
+
+
+# Root directory of COSMOS Web
+COSMOS_WEB_FOLDER=~/cosmos/source/tools/cosmos-web
+
+
 usage() {
     echo "Usage: cosmos_web [-s]"
     echo "    > -s       Start npm and agent_mongo in separate terminals"

@@ -6,10 +6,7 @@ echo "====================================================="
 echo "Installing dependencies"
 
 sudo apt-get update
-sudo apt install npm
-sudo npm install -g npm@latest
-
-sudo apt-get install nodejs
+sudo apt-get install nodejs npm
 sudo apt-get install -y build-essential wget libz-dev gcc-7 g++-7 cmake git openssl libssl-dev libsasl2-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev
 
 
